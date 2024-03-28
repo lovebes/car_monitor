@@ -1,0 +1,30 @@
+{
+    "phone_addr": "AA:BB:CC:DD:EE:FF",
+    "upload_host": "192.168.1.2",
+    "upload_port": 80,
+    "upload_path": "/dashcam_upload/{copyname}/{dstfn}?start={start}&append={size}&totalsize={totalsize}&modtime={modtime}&key={key}",
+    "upload_query_url": "http://192.168.1.2/dashcam_upload/{copyname}/query?key={key}",
+    "upload_notify_url": "http://192.168.1.2/dashcam_notify?s={status}&w={copyname}&key={key}",
+    "key": "hunter2",
+    "cardata_path": "/home/pi/cardata",
+    "extra_storage": "/media/carvid-ext",
+    "info_server": "1.2.3.4",
+    "info_port": 9876,
+    "info_hmac": "[[[ Run `xxd -p -g0 -l32 -c32 /dev/urandom` to generate! ]]]",
+    "command_hmac": "[[[ Run `xxd -p -g0 -l32 -c32 /dev/urandom` to generate! ]]]",
+
+    "cameras": [
+        {
+            "label": "FCV1",
+            "copyname": "carvid_front",
+            "mountpath": "/media/autocopy/front",
+            "sequential": true
+        },
+        {
+            "label": "RCV1",
+            "copyname": "carvid_rear",
+            "mountpath": "/media/autocopy/rear",
+            "sequential": true
+        }
+    ]
+}

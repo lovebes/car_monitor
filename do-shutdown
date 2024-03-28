@@ -1,0 +1,33 @@
+#!/bin/sh
+
+chvt 1
+
+pwm=/sys/class/pwm/pwmchip0/pwm0
+period=$pwm/period
+duty=$pwm/duty_cycle
+ena=$pwm/enable
+
+echo 0 > $duty
+echo 638162 > $period # f=1567
+echo 319081 > $duty
+echo 1 > $ena
+sleep 0.100
+
+echo 0 > $duty
+echo 803858 > $period # f=1244
+echo 401929 > $duty
+sleep 0.100
+
+echo 0 > $duty
+echo 956022 > $period # f=1046
+echo 478011 > $duty
+sleep 0.100
+
+echo 0 > $duty
+echo 851788 > $period # f=1174
+echo 425894 > $duty
+sleep 0.100
+
+echo 0 > $ena
+
+shutdown -h now

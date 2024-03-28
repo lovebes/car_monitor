@@ -1,0 +1,12 @@
+[Unit]
+Description=Hologram Command Listener
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%BASE%/
+ExecStart=%BASE%/run_hologram_command_listener.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

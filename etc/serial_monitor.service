@@ -1,0 +1,12 @@
+[Unit]
+Description=Serial Monitor service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%BASE%/
+ExecStart=%BASE%/run_serial_monitor.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

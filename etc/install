@@ -1,0 +1,10 @@
+#!/bin/sh
+
+IFS=
+cd `dirname $0`
+mydir=`pwd`
+pdir=`dirname $mydir`
+esc=$(echo $pdir | sed 's/\//\\\//g')
+for j in *.service; do
+    sed "s/%BASE%/$esc/" $j > /etc/systemd/system/$j
+done

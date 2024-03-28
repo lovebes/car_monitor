@@ -1,0 +1,12 @@
+[Unit]
+Description=RFCOMM command service
+After=bluetooth.target
+
+[Service]
+Type=simple
+WorkingDirectory=%BASE%/
+ExecStart=%BASE%/run_rfcomm_listen.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$1" in
+    poweroff|halt)
+        sleep 1
+        while :; do
+            sleep 1
+            /usr/sbin/i2ctransfer -y 1 w1@0x27 0xef
+        done
+        ;;
+esac
